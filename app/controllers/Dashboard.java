@@ -16,14 +16,19 @@ public class Dashboard extends Controller {
   public static void index() {
     Logger.info("Rendering Dashboard");
     Member member = Accounts.getLoggedInMember();
-    List<Station> stations = member.stations;
-    Collections.sort(stations, new Comparator<Station>() {
-      @Override
-      public int compare(Station s1, Station s2) {
-        return s1.name.compareTo(s2.name);
-      }
-    });
-    render("dashboard.html", member, stations);
+    if (member != null) {
+      List<Station> stations = member.stations;
+      Collections.sort(stations, new Comparator<Station>() {
+        @Override
+        public int compare(Station s1, Station s2) {
+          return s1.name.compareTo(s2.name);
+        }
+      });
+      render("dashboard.html", member, stations);
+    }
+    else {
+      render("login.html");
+        }
   }
 
   public static String getMemberName() {
