@@ -10,28 +10,32 @@ import javax.persistence.OneToMany;
 import play.db.jpa.Model;
 
 @Entity
-public class Station extends Model
-{
+public class Station extends Model {
   public String name;
   @OneToMany(cascade = CascadeType.ALL)
   public List<Reading> readings = new ArrayList<Reading>();
+  public double latitude;
+  public double longitude;
 
-
-  public Station(String name)
-  {
+  public Station(String name,double latitude, double longitude) {
     this.name = name;
-
+    this.latitude = latitude;
+    this.longitude = longitude;
   }
+
   public double getTemperatureC() {
     if (readings.size() == 0)  { return 0.0; }
-        Reading reading = this.readings.get(this.readings.size()-1);
-  return reading.temperature;
+    Reading reading = this.readings.get(this.readings.size()-1);
+    return reading.temperature;
   }
+
   public double getTemperatureF() {
     if (readings.size() == 0)  { return 0.0; }
     Reading reading = this.readings.get(this.readings.size()-1);
     return Math.round(reading.temperature * (9.0 / 5.0) + 32);
   }
+
+
   public String getWeather() {
     if (readings.size() == 0)  { return ""; }
     Reading reading = this.readings.get(this.readings.size()-1);
@@ -44,6 +48,30 @@ public class Station extends Model
     if(reading.code == 700) { return "Snow"; }
     if(reading.code == 800) { return "Thunder"; }
     return "0";
+  }
+
+
+  public double getMaxTemp() {
+    if (readings.size() == 0)  { return 0.0; }
+    double max = -100.0;
+    for (int i = 0; i < readings.size(); i++) {
+      Reading reading = readings.get(i);
+      if (reading.temperature > max) {
+        max = reading.temperature;
+      }
+    }
+    return max;
+  }
+  public double getMinTemp() {
+    if (readings.size() == 0)  { return 0.0; }
+    double min = 100;
+    for (int i = 0; i < readings.size(); i++) {
+      Reading reading = readings.get(i);
+      if (reading.temperature < min) {
+        min = reading.temperature;
+      }
+    }
+    return min;
   }
   public String getWindSpeed(){
     if (readings.size() == 0)  { return ""; }
@@ -60,13 +88,39 @@ public class Station extends Model
     if(reading.windSpeed >= 75 && reading.windSpeed <=88) { return "9"; }
     if(reading.windSpeed >= 89 && reading.windSpeed <=102) { return "10"; }
     if(reading.windSpeed >= 103 && reading.windSpeed <=117) { return "11"; }
-    return "0";
+      return "0";
   }
-  public int getPressure() {
+
+  public double getMaxWindSpeed() {
+    if (readings.size() == 0)  { return 0.0; }
+    double max = -100.0;
+    for (int i = 0; i < readings.size(); i++) {
+      Reading reading = readings.get(i);
+      if (reading.windSpeed > max) {
+        max = reading.windSpeed;
+      }
+    }
+    return max;
+  }
+  public double getMinWindSpeed() {
     if (readings.size() == 0)  { return 0; }
-    Reading reading = this.readings.get(this.readings.size()-1);
-    return reading.pressure;
+    double min = 100.0;
+    for (int i = 0; i < readings.size(); i++) {
+      Reading reading = readings.get(i);
+      if (reading.windSpeed < min) {
+        min = reading.windSpeed;
+      }
+    }
+    return min;
   }
+
+  public double getWindChill() {
+    if (readings.size() == 0)  { return 0.0; }
+    Reading reading = this.readings.get(this.readings.size()-1);
+
+    return Math.round(13.12 + (0.6215 * reading.temperature ) - (11.37 * Math.pow(reading.windSpeed, 0.16)) + (0.3965 * reading.temperature) * (Math.pow(reading.windSpeed, 0.16)) );
+   }
+
   public String getWindDirection(){
     if (readings.size() == 0)  { return ""; }
     Reading reading = this.readings.get(this.readings.size()-1);
@@ -88,9 +142,34 @@ public class Station extends Model
     if(reading.windDirection >= 326.26 && reading.windDirection <= 348.75) { return "NorthNorthWest"; }
     return "0";
   }
-  public double getWindChill() {
-    if (readings.size() == 0)  { return 0.0; }
+
+  public int getPressure() {
+    if (readings.size() == 0)  { return 0; }
     Reading reading = this.readings.get(this.readings.size()-1);
-    return Math.round(13.12 + (0.6215 * reading.temperature ) - (11.37 * Math.pow(reading.windSpeed, 0.16)) + (0.3965 * reading.temperature) * (Math.pow(reading.windSpeed, 0.16)) );
+    return reading.pressure;
   }
+  public int getMaxPressure() {
+    if (readings.size() == 0)  { return 0; }
+    int max = -1000;
+    for (int i = 0; i < readings.size(); i++) {
+      Reading reading = readings.get(i);
+      if (reading.pressure > max) {
+        max = reading.pressure;
+      }
+    }
+    return max;
+  }
+  public int getMinPressure() {
+    if (readings.size() == 0)  { return 0; }
+    int min = 10000;
+    for (int i = 0; i < readings.size(); i++) {
+      Reading reading = readings.get(i);
+      if (reading.pressure < min) {
+        min = reading.pressure;
+      }
+    }
+    return min;
+  }
+
+
 }

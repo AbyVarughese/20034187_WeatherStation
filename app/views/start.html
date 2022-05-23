@@ -1,13 +1,31 @@
 #{extends 'main.html' /}
 #{set title:'About' /}
 
-#{menu id:"start"/}
+<!-- #{menu id:"start"/} -->
+#{welcomemenu id:"start"/}
 
 <section class="ui center aligned middle aligned segment">
-  <h1 class="ui header">
-    Welcome to Weather Station 01
-  </h1> 
-  <p>
-    A small app to show the weather
-  </p>
+    <h1 class="ui header">
+        Welcome to Weather Station 01
+    </h1>
+    <p>
+        A small app to show the weather
+    </p>
+    <table class="ui fixed table">
+        <thead>
+        <tbody>
+        <tr>
+            <th> Today's Air Quality</th>
+        </tr>
+        </thead>
+
+        <td>
+            Waterford
+        </td>
+        <td>
+            Wicklow
+        </td>
+        </tr>
+        <tbody>
+    </table>
 </section>

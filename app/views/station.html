@@ -11,28 +11,28 @@
         <tr style="background-color:white;color:#ffffff;">
             <th>
                 <table style="border-radius: 5px;table-layout: fixed; width: 100%; background-color: black; margin: 5px;">
-                    <tr><td><h3> ${station.name}</h3></td><td><br/><br/><br/><br/><br/><br/><br/></td></tr>
+                    <tr><td><h3> ${station.name}</h3></td><td><img class="ui icon" src="/public/images/station.png" width="50" height="50"><br/><br/><br/></td></tr>
+                    <td> Lat: ${station.latitude} <br/> Lng: ${station.longitude} <br/> </td>
                 </table></th>
             <th>
                 <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
-                    <tr><td><h3> Weather</h3></td><td><br/><br/><br/><br/></td></tr>
+                    <tr><td><h3> Weather</h3></td><td><img class="ui icon" src="/public/images/weather.png" width="50" height="50"><br/><br/><br/><br/></td></tr>
                     <td> ${station.getWeather()} <br/> </td>
                 </table></th>
             <th>
                 <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
-                    <tr><td><h3> Temp </h3></td><td><br/><br/><br/><br/></td></tr>
-                    <td> ${station.getTemperatureC()}  C <br/> ${station.getTemperatureF()} F </td>
+                    <tr><td><h3> Temp </h3></td><td><img class="ui icon" src="/public/images/temp.png" width="50" height="50"><br/></td></tr>
+                    <td> ${station.getTemperatureC()}  C <br/> ${station.getTemperatureF()} F <br/> Max: ${station.getMaxTemp()} <br/> Min: ${station.getMinTemp()}</td>
                 </table></th>
             <th>
                 <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
-                    <tr><td><h3> Wind</h3></td><td><br/><br/></td></tr>
+                    <tr><td><h3> Wind</h3></td><td><img class="ui icon" src="/public/images/wind.png" width="50" height="50"><br/></td></tr>
                     <td>  ${station.getWindSpeed()} bft <br/> ${station.getWindDirection()}<br/>  Feels like <br/>  ${station.getWindChill() } <br/></td>
-
                 </table></th>
             <th>
                 <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
-                    <tr><td><h3> Pressure</h3></td><td><br/><br/><br/><br/><br/></td></tr>
-                    <td> ${station.getPressure()} hpa <br/> </td>
+                    <tr><td><h3> Pressure</h3></td><td><img class="ui icon" src="/public/images/pressure.png" width="50" height="50"><br/><br/></td></tr>
+                    <td> ${station.getPressure()} hpa <br/> Max: ${station.getMaxPressure()} <br/> Min: ${station.getMinPressure()}</td>
                 </table></th>
         </tr>
     </table>

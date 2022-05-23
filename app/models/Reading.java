@@ -4,8 +4,7 @@ import javax.persistence.Entity;
 import play.db.jpa.Model;
 
 @Entity
-public class Reading extends Model
-{
+public class Reading extends Model {
   public String name;
   public int code;
   public String weather;
@@ -15,9 +14,7 @@ public class Reading extends Model
   public int pressure;
 
 
-  
-  public Reading(String name, int code, String weather, double temperature, double windSpeed, double windDirection, int pressure)
-  {
+  public Reading(String name,  int code, String weather, double temperature, double windSpeed, double windDirection, int pressure) {
     this.name = name;
     this.code = code;
     this.weather = weather;
