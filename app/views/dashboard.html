@@ -1,17 +1,53 @@
 #{extends 'main.html' /}
 #{set title:'Dashboard' /}
 
-#{menu id:"dashboard"/}
+#{menu id:"dashboard" /}
+<section class="ui segment">
+    <h2 class="ui header">
+        Station List of ${member.firstname} ${member.lastname}
+    </h2>
+</section>
 #{list items:stations, as:'station'}
 <section class="ui segment">
     <h2 class="ui header">
         ${station.name}
     </h2>
+    <table class="ui fixed table" >
+        <tr style="background-color:white;color:#ffffff;">
+            <th>
+                <table style="border-radius: 5px;table-layout: fixed; width: 100%; background-color: black; margin: 5px;">
+                    <tr><td><h3> ${station.name}</h3></td><td><img class="ui icon" src="/public/images/station.png" width="50" height="50"></td></tr>
+                    <td> Lat: ${station.latitude} <br/> Lng: ${station.longitude} <br/><br/><br/><br/> </td>
+                </table></th>
+            <th>
+                <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
+                    <tr><td><h3> Weather</h3></td><td><img class="ui icon" src="/public/images/weather.png" width="50" height="50"></td></tr>
+                    <td> <br/><br/><br/><br/><br/> </td>
+                </table></th>
+            <th>
+                <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
+                    <tr><td><h3> Temp </h3></td><td><img class="ui icon" src="/public/images/temp.png" width="50" height="50"></td></tr>
+                    <td> 0.0 C <br/> 0.0 F <br/> Max: 0.0<br/> Min: 0.0<br/><br/></td>
+                </table></th>
+            <th>
+                <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
+                    <tr><td><h3> Wind</h3></td><td><img class="ui icon" src="/public/images/wind.png" width="50" height="50"></td></tr>
+                    <td>0 bft <br/>  Feels like <br/> 0.0 <br/> Max: 0.0 <br/> Min: 0.0 </td>
+                </table></th>
+            <th>
+                <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
+                    <tr><td><h3> Pressure</h3></td><td><img class="ui icon" src="/public/images/pressure.png" width="50" height="50"></td></tr>
+                    <td> 0 hpa <br/> Max: 0.0<br/> Min: 0.0<br/><br/><br/></td>
+                </table></th>
+        </tr>
+    </table>
 
     <a href="/stations/${station.id}" class="ui icon button">
         <i class="icon folder open"></i>
     </a>
-
+    <a href="/dashboard/deletestation/${station.id}" class="ui icon button">
+        <i class="icon trash"></i>
+    </a>
 </section>
 #{/list}
 #{addstation /}

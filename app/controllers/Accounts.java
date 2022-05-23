@@ -18,6 +18,7 @@ public class Accounts extends Controller {
     Member member = new Member(firstname, lastname, email, password);
     member.save();
     redirect("/");
+
   }
 
   public static void authenticate(String email, String password) {
@@ -34,14 +35,32 @@ public class Accounts extends Controller {
     }
   }
 
+  public static void account() {
+    Member member = getLoggedInMember();
+    render("account.html", member);
+  }
+
+  public static void edit(String firstname, String lastname, String email, String password) {
+    Member member = getLoggedInMember();
+    member.firstname = firstname;
+    member.lastname = lastname;
+    //member.email=email;
+    if (!password.isEmpty()) {
+      member.password = password;
+    }
+    member.save();
+    //render("account.html", member);
+    redirect("/dashboard");
+
+
+  }
+
   public static void logout() {
     session.clear();
     redirect("/");
   }
 
   public static Member getLoggedInMember() {
-    //Member test = new Member("first", "last", "frstlast@example.com", "test");
-
     Member member = null;
     if (session.contains("logged_in_Memberid")) {
       String memberId = session.get("logged_in_Memberid");

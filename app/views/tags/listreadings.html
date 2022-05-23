@@ -1,6 +1,7 @@
 <table class="ui fixed table">
     <thead>
     <tr>
+        <th>Date/Time</th>
         <th>Code</th>
         <th>Temp</th>
         <th>Wind Speed</th>
@@ -13,12 +14,15 @@
 
     <tr>
         <td>
+            ${reading.dateTime}
+        </td>
+        <td>
             ${reading.code}
         </td>
         <td>
             ${reading.temperature}
         </td>
-         <td>
+        <td>
             ${reading.windSpeed}
         </td>
         <td>
@@ -27,6 +31,14 @@
         <td>
             ${reading.pressure}
         </td>
+        <td>
+            <!--<a href="/stations/${_station.id}/deletereading/${reading.id}" class="ui tiny red button">Delete Reading</a>
+            -->
+            <a href="/stations/${_station.id}/deletereading/${reading.id}" class="ui icon button">
+                <i class="red icon trash"></i>
+            </a>
+        </td>
+
     </tr>
     #{/list}
     </tbody>
