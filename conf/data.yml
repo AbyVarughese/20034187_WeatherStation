@@ -1,0 +1,30 @@
+Reading(r1):
+  code: 800
+  temp: 0.5
+  wind: 3.5
+
+Reading(r2):
+  code: 600
+  temp: 6.0
+  wind: 2
+
+Reading(r3):
+  code: 700
+  temp: 8.0
+  wind: 1
+
+Reading(r4):
+  code: 200
+  temp: 0.5
+  wind: 3.5
+
+Station(s1):
+  name: Tramore
+  readings:
+    - r1
+    - r2
+Station(s2):
+  name: Dunmore
+  readings:
+    - r3
+    - r4
