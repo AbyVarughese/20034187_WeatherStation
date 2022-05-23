@@ -7,36 +7,43 @@
   <h2 class="ui header">
     ${station.name}
   </h2>
+  <!--
   <table class="ui fixed table" >
     <tr style="background-color:white;color:#ffffff;">
       <th>
         <table style="border-radius: 5px;table-layout: fixed; width: 100%; background-color: black; margin: 5px;">
-          <tr><td><h3> ${station.name}</h3></td><td><br/><br/><br/><br/><br/></td></tr>
+          <tr><td><h3> ${station.name}</h3></td><td><br/><br/><br/><br/><br/><br/></td></tr>
         </table></th>
       <th>
         <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
-          <tr><td><h3> Weather</h3></td><td><br/><br/><br/></td></tr>
+          <tr><td><h3> Weather</h3></td><td><br/><br/><br/><br/></td></tr>
           <td> ${station.getWeather()} <br/>   </td>
         </table></th>
       <th>
         <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
-          <tr><td><h3> Temp </h3></td><td><br/><br/></td></tr>
+          <tr><td><h3> Temp </h3></td><td><br/><br/><br/></td></tr>
           <td> ${station.getTemperatureC()}  C <br/> ${station.getTemperatureF()} F </td>
         </table></th>
       <th>
         <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
-          <tr><td><h3> Wind</h3></td><td><br/><br/><br/></td></tr>
-          <td>  ${station.getWindSpeed()} bft <br/> </td>
+          <tr><td><h3> Wind</h3></td><td><br/></td></tr>
+          <td>  ${station.getWindSpeed()} bft <br/> ${station.getWindDirection()}<br/>  Feels like <br/>  ${station.getWindChill() } <br/></td>
 
         </table></th>
       <th>
         <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
-          <tr><td><h3> Pressure</h3></td><td><br/><br/><br/></td></tr>
+          <tr><td><h3> Pressure</h3></td><td><br/><br/><br/><br/></td></tr>
           <td> ${station.getPressure()} hpa <br/> </td>
         </table></th>
     </tr>
   </table>
+ -->
 
-  #{listreadings station:station/}
+  <!--#{listreadings station:station/} -->
+  <a href="/stations/${station.id}" class="ui icon button">
+    <i class="icon folder open"></i>
+  </a>
+
 </section>
 #{/list}
+#{addstation /}

@@ -10,8 +10,12 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -20,7 +24,6 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="292HY1NeZdT1Rh559kgpjx9k7ag" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,6 +34,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -42,8 +46,11 @@
       <updated>1652304303736</updated>
       <workItem from="1652304305359" duration="45000" />
       <workItem from="1652304754868" duration="3726000" />
-      <workItem from="1652893870727" duration="11000" />
-      <workItem from="1652947793672" duration="15000" />
+      <workItem from="1652308986776" duration="3153000" />
+      <workItem from="1652335954617" duration="27000" />
+      <workItem from="1652337126052" duration="44000" />
+      <workItem from="1652337223776" duration="5316000" />
+      <workItem from="1652350527814" duration="6450000" />
     </task>
     <servers />
   </component>
