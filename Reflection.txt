@@ -1,0 +1,56 @@
+/* Reflection:-
+
+Student Name: ABY VARUGHESE	
+Student id: 20034187
+Git Hub url - https://github.com/AbyVarughese/20034187_WeatherStation.git 
+Video url - 
+
+
+Reading:-
+
+Temperature
+Wind Speed
+Wind Direction
+Date & Time
+
+
+Station:-
+
+Station Name
+Latest  Weather
+Latest Temperature C & F
+Wind Bft
+Pressure
+Wind Chill
+Latitude
+Longitude
+Maximum & Minimum Temperature
+Maximum & Minimum Wind
+Maximum & Minimum Pressure
+Temperature Trends
+Wind Trends
+Pressure Trends
+
+Member:- 
+
+First Name
+Last Name
+Email
+Password
+Edit personal details
+
+Members can be added, Able to login 
+Able to edit the personal details
+
+Members are able add Stations and they can add Readings to their stations.
+They can delete their station and readings.
+
+Members Dashboard shows the summary of stations which is alpbetically sorted
+Members Station details shows the Readings what they added. 
+
+
+
+
+
+
+*/
