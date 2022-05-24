@@ -11,11 +11,12 @@ import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
 
-
+// renders the dashboard
 public class Dashboard extends Controller {
   public static void index() {
     Logger.info("Rendering Dashboard");
     Member member = Accounts.getLoggedInMember();
+    // this for sorting the stations alphabetically
     if (member != null) {
       List<Station> stations = member.stations;
       Collections.sort(stations, new Comparator<Station>() {
@@ -30,12 +31,12 @@ public class Dashboard extends Controller {
       render("login.html");
         }
   }
-
+ // gets the member name   displays in dashboard
   public static String getMemberName() {
     Member member = Accounts.getLoggedInMember();
     return member.firstname + " " + member.lastname;
   }
-
+   // for adding a new station for the logged in member
   public static void addStation(String name, String weather, double latitude, double longitude) {
     if (!name.isBlank()) {
       Station station = new Station(name, latitude, longitude);
@@ -50,7 +51,7 @@ public class Dashboard extends Controller {
     }
     redirect("/dashboard");
   }
-
+ // to delete the station for the logged in member
   public static void deleteStation(Long id) {
     Station station = Station.findById(id);
     Logger.info("Removing id " + station.id);

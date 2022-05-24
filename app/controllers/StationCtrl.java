@@ -7,7 +7,7 @@ import models.Station;
 import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
-
+// display the stations and  also for  adding and deleting the reading in a station
 public class StationCtrl extends Controller {
   public static void index(Long id) {
     Station station = Station.findById(id);

@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import java.util.Date;
 
 import play.db.jpa.Model;
-
+// this class represents the single reading
 @Entity
 public class Reading extends Model {
   public String name;

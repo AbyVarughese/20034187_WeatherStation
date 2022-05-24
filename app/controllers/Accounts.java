@@ -3,7 +3,7 @@ package controllers;
 import models.Member;
 import play.Logger;
 import play.mvc.Controller;
-
+// controller handles sign up login register and authentication
 public class Accounts extends Controller {
   public static void signup() {
     render("signup.html");
@@ -12,7 +12,7 @@ public class Accounts extends Controller {
   public static void login() {
     render("login.html");
   }
-
+// register the member
   public static void register(String firstname, String lastname, String email, String password) {
     Logger.info("Registering new user " + email);
     Member member = new Member(firstname, lastname, email, password);
@@ -20,7 +20,7 @@ public class Accounts extends Controller {
     redirect("/");
 
   }
-
+// authentication
   public static void authenticate(String email, String password) {
     Logger.info("Attempting to authenticate with " + email + ":" + password);
 
@@ -39,7 +39,7 @@ public class Accounts extends Controller {
     Member member = getLoggedInMember();
     render("account.html", member);
   }
-
+// this is used to edit the member details . other than email which cannot be changed
   public static void edit(String firstname, String lastname, String email, String password) {
     Member member = getLoggedInMember();
     member.firstname = firstname;

@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
-
+// represents the member of the application . provides  functionality for finding member and checking password.
 @Entity
 public class Member extends Model {
   public String firstname;
