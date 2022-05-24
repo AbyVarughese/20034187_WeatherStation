@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38988653-ee7c-4f0b-a97f-41ca5a407e94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/system.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/dependencies.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/dependencies.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/station.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/station.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/station.iws" beforeDir="false" afterPath="$PROJECT_DIR$/station.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +15,7 @@
     <option name="done" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,7 +53,7 @@
       <workItem from="1653299080251" duration="1466000" />
       <workItem from="1653317770933" duration="1534000" />
       <workItem from="1653319504261" duration="1007000" />
-      <workItem from="1653380793619" duration="794000" />
+      <workItem from="1653380793619" duration="2315000" />
     </task>
     <servers />
   </component>
