@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38988653-ee7c-4f0b-a97f-41ca5a407e94" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/conf/dependencies.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/dependencies.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/station.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/station.iws" beforeDir="false" afterPath="$PROJECT_DIR$/station.iws" afterDir="false" />
     </list>
@@ -53,7 +52,7 @@
       <workItem from="1653299080251" duration="1466000" />
       <workItem from="1653317770933" duration="1534000" />
       <workItem from="1653319504261" duration="1007000" />
-      <workItem from="1653380793619" duration="2315000" />
+      <workItem from="1653380793619" duration="2605000" />
     </task>
     <servers />
   </component>
