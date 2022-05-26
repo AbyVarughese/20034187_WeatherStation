@@ -15,7 +15,7 @@ This page shows the station description.   we can open the station to add or vie
     <h2 class="ui header">
         ${station.name}
     </h2>
-    <table class="ui fixed table" >
+<!--    <table class="ui fixed table" >
         <tr style="background-color:white;color:#ffffff;">
             <th>
                 <table style="border-radius: 5px;table-layout: fixed; width: 100%; background-color: black; margin: 5px;">
@@ -42,6 +42,75 @@ This page shows the station description.   we can open the station to add or vie
                     <tr><td><h3> Pressure</h3></td><td><img class="ui icon" src="/public/images/pressure.png" width="50" height="50"></td></tr>
                     <td> 0 hpa <br/> Max: 0.0<br/> Min: 0.0<br/><br/><br/></td>
                 </table></th>
+        </tr>
+    </table>-->
+    <table class="ui fixed table">
+        <tr style="background-color:white;color:#ffffff;">
+            <th>
+                <table style="border-radius: 5px;table-layout: fixed; width: 100%; background-color: black; margin: 5px;">
+                    <tr>
+                        <td><h3> ${station.name}</h3></td>
+                        <td><img class="ui icon" src="/public/images/station.png" width="50" height="50"><br/><br/><br/><br/><br/>
+                        </td>
+                    </tr>
+                    <td> Lat: ${station.latitude} <br/> Lng: ${station.longitude} <br/> <br/></td>
+                </table>
+            </th>
+            <th>
+                <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
+                    <tr>
+                        <td><h3> Weather</h3></td>
+                        <td><img class="ui icon" src="/public/images/weather.png" width="50" height="50"><br/><br/><br/>
+                        </td>
+                    </tr>
+                    <td> ${station.getWeather()} <br/> <br/> <br/><br/><br/></td>
+                </table>
+            </th>
+            <th>
+                <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
+                    <tr>
+                        <td><h3> Temp </h3></td>
+                        <td><img class="ui icon" src="/public/images/temp.png" width="50" height="50"><br/></td>
+                    </tr>
+                    <tr>
+                        <td> ${station.getTemperatureC()} C <br/> ${station.getTemperatureF()} F <br/> Max:
+                            ${station.getMaxTemp()} <br/> Min: ${station.getMinTemp()}<br/><br/><br/><br/></td>
+                        <td><img class="ui icon" src="/public/images/${station.getTempReadingsImg()}" width="50"
+                                 height="50"/></td>
+                    </tr>
+                </table>
+            </th>
+            <th>
+                <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
+                    <tr>
+                        <td><h3> Wind</h3></td>
+                        <td><img class="ui icon" src="/public/images/wind.png" width="50" height="50"></td>
+                    </tr>
+                    <tr>
+                        <td>${station.getWindSpeed()} bft <br/> ${station.getWindDirection()} <br/> Feels like <br/>
+                            ${station.getWindChill()} <br/>Max: ${station.getMaxWindSpeed()} <br/>Min:
+                            ${station.getMinWindSpeed()}<br/><br/></td>
+                        <td><img class="ui icon" src="/public/images/${station.getWindReadingsImg()}" width="50"
+                                 height="50"/></td>
+                    </tr>
+
+                </table>
+            </th>
+            <th>
+                <table style="border-radius: 5px;table-layout: fixed; width: 100%;background-color: black; margin: 5px;">
+                    <tr>
+                        <td><h3> Pressure</h3></td>
+                        <td><img class="ui icon" src="/public/images/pressure.png" width="50"
+                                 height="50"><br/><br/><br/></td>
+                    </tr>
+                    <tr>
+                        <td> ${station.getPressure()} hpa <br/> Max: ${station.getMaxPressure()}<br/> Min:
+                            ${station.getMinPressure()} <br/><br/><br/></td>
+                        <td><img class="ui icon" src="/public/images/${station.getPressureReadingsImg()}" width="50"
+                                 height="50"/></td>
+                    </tr>
+                </table>
+            </th>
         </tr>
     </table>
 
