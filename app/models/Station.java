@@ -1,3 +1,8 @@
+/**
+ * this  provides reading and the functionality  of displaying values in the required formats
+ * @auther Aby Varughese
+ * @version Version 5 R3
+ */
 package models;
 
 import java.util.ArrayList;
@@ -8,7 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
 import play.db.jpa.Model;
-// this  provides reading and the functionality  of displaying values in the required formats
+
 @Entity
 public class Station extends Model {
   public String name;
